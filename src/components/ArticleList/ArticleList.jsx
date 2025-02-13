@@ -1,5 +1,18 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import SingleArticle from '../SingleArticle';
+import { loadArticles } from '../../store/articleReducer';
+
 
 const ArticleList = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Code to run **after** the component has rendered
+    dispatch(loadArticles());
+  }, [dispatch])
+  // It should only run one time
+
   return (
     <div>
       <h1>Article List</h1>
