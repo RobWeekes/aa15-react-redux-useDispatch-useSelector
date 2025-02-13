@@ -1,6 +1,17 @@
 import './SingleArticle.css';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { loadArticles } from '../../store/articleReducer';
 
 const SingleArticle = () => {
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    // Code to run **after** the component has rendered
+    dispatch(loadArticles);
+  }, [])
+  // It should only run one time
+
   return (
     <div className='singleArticle'>
       <h1>Why Am I At Home</h1>

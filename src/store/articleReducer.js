@@ -2,7 +2,9 @@ import articles from '../data/data.json';
 
 const LOAD_ARTICLES = 'article/loadArticles';
 
+// action creator
 export const loadArticles = () => {
+  // action
   return {
     type: LOAD_ARTICLES,
     articles
